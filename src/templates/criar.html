@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!-- Estilo da Pagina-->
+{% block estilo %} 
+<link rel="stylesheet" href="../static/criar.css">
+{% endblock %}
+<!-- Titulo da Pagina -->
+{% block titulo %} 
+<title>Criar Nota</title>
+{% endblock %}
+<!-- Conteudo da Pagina -->
+{% block conteudo %}
+    <header>
+        <div class="header">
+            <h1>Criar Nota</h1>
+        </div>
+    </header>
+    <main>
+        <section class="criar-nota">
+            <form action="" method="">
+                <input class="titulo" type="text" placeholder="Digite o Titulo " required>
+                <textarea class="conteudo" name="conteudo" id="conteudo" placeholder="Digite o Conteudo" required></textarea>
+                <div class="botoes">
+                    <input class="criar" type="submit" value="Criar">
+                    <a  href="/"> <p class="Voltar">Voltar</p></a>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock %}

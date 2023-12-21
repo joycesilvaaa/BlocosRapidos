@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<!-- Estilo da Pagina-->
+{% block estilo %} 
+<link rel="stylesheet" href="../static/visualizar.css">
+{% endblock %}
+<!-- Titulo da Pagina -->
+{% block titulo %} 
+<title>Visualizar Nota</title>
+{% endblock %}
+<!-- Conteudo da Pagina -->
+{% block conteudo %}
+    <main>
+        <header>
+            <h1>Titulo</h1>
+            <h4>01/02/2002</h4>
+        </header>
+        <section class="nota">
+            <div  class="conteudo">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, vitae officiis, atque minus nobis asperiores doloremque eius quia assumenda alias quis maiores excepturi culpa. Quae exercitationem modi animi odit molestias?</p>
+            </div>
+        <div class="botao">
+            <a href="/editar"><p class="editar">Editar <img src="../static/imagem/editar_nota.png" alt="Editar nota"></p></a>
+            <a href="/"> <p class="Voltar">Voltar</p></a>
+        </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!-- Estilo da Pagina-->
+{% block estilo %} 
+<link rel="stylesheet" href="../static/deletar.css">
+{% endblock %}
+<!-- Titulo da Pagina -->
+{% block titulo %} 
+<title>Remover Nota</title>
+{% endblock %}
+<!-- Conteudo da Pagina -->
+{% block conteudo %}
+<header class="header">
+        <h1>Remover Nota</h1>   
+</header>
+<main>
+    <section class="notas">
+        <div class="nota-remover">
+            <p>fnnfnnfn</p>
+            <a href="/remove"><img src="{{ url_for('static', filename='imagem/remove_nota.png') }}" alt="Click para visualizar a nota."></a>
+        </div>
+        <div class="voltar">
+            <a href="/"> <p class="Voltar">Voltar</p></a>
+        </div> 
+    </section>
+</main>
+{% endblock %}

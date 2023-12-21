@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!-- Estilo da Pagina-->
+{% block estilo %} 
+<link rel="stylesheet" href="../static/inicio.css">
+{% endblock %}
+<!-- Titulo da Pagina -->
+{% block titulo %} 
+<title>Notas</title>
+{% endblock %}
+<!-- Conteudo da Pagina -->
+{% block conteudo %}
+    <header>
+        <div class="header">
+            <h1>Notas</h1>
+            <a href="/criar"><img src="{{ url_for('static', filename='imagem/adicionar.png') }}" alt="Adicionar nova nota."></a>
+        </div>
+    </header>
+    <main>
+        <section class="notas">
+            <div class="notas_selecionar">
+                <p>fnnfnnfn</p>
+                <a href="/visualizar"><img src="{{ url_for('static', filename='imagem/seta.png') }}" alt="Click para visualizar a nota."></a>
+            </div>
+            <div class="deletar-nota">
+                <a href="/deletar"> <p>Deletar Nota </p><img src="{{ url_for('static', filename='imagem/remove_nota_v.png') }}" alt="Selecionar qual nota remover"> </a>
+            </div> 
+        </section>
+    </main>
+{% endblock %}
