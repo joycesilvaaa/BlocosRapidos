@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Palanquin+Dark&family=Work+Sans:ital,wght@0,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+  }
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 2%;
+    margin: 3%;
+    border-bottom: solid 2px #758173;
+
+    font-weight: 700;
+    color: #041B15;
+}
+.nota-remover{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.20);
+
+    font-weight: 600;
+}
+
+.Voltar{
+    text-align: center;
+    padding: 2%;
+    margin: 2% 40%;
+
+    border-radius: 5px;
+    background-color: #1A2EDE;
+
+    font-size: 115%;
+    font-weight: 500;
+    color: white;
+}
