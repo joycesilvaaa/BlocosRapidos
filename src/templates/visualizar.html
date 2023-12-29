@@ -10,16 +10,28 @@
 <!-- Conteudo da Pagina -->
 {% block conteudo %}
     <main>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="alerta" class="alert alert-success alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                &#10004; {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        {% endwith %}
+        {% if nota %}
         <header>
-            <h1>Titulo</h1>
-            <h4>01/02/2002</h4>
+            <h1>{{ nota[1]  }}</h1>
+            <h4>{{ nota[3] }}</h4>
         </header>
         <section class="nota">
             <div  class="conteudo">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, vitae officiis, atque minus nobis asperiores doloremque eius quia assumenda alias quis maiores excepturi culpa. Quae exercitationem modi animi odit molestias?</p>
+                <p>{{ nota[2] }}</p>
             </div>
         <div class="botao">
-            <a href="/editar"><p class="editar">Editar <img src="../static/imagem/editar_nota.png" alt="Editar nota"></p></a>
+            <a href="/editar/{{ nota[0] }}"><p class="editar">Editar <img src="../static/imagem/editar_nota.png" alt="Editar nota"></p></a>
+        {% endif %}
             <a href="/"> <p class="Voltar">Voltar</p></a>
         </div>
         </section>
