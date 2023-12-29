@@ -9,15 +9,28 @@
 {% endblock %}
 <!-- Conteudo da Pagina -->
 {% block conteudo %}
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="alerta" class="alert alert-success alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                &#10004; {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
 <header class="header">
         <h1>Remover Nota</h1>   
 </header>
 <main>
+    
+        {% endwith %}
     <section class="notas">
+        {% for nota in notas_deletar: %}
         <div class="nota-remover">
-            <p>fnnfnnfn</p>
-            <a href="/remove"><img src="{{ url_for('static', filename='imagem/remove_nota.png') }}" alt="Click para visualizar a nota."></a>
+            <p>{{ nota[1] }}</p>
+            <a href="/remove/{{ nota[0] }}"><img src="{{ url_for('static', filename='imagem/remove_nota.png') }}" alt="Click para visualizar a nota."></a>
         </div>
+        {% endfor %}
         <div class="voltar">
             <a href="/"> <p class="Voltar">Voltar</p></a>
         </div> 
