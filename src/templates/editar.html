@@ -9,19 +9,32 @@
 {% endblock %}
 <!-- Conteudo da Pagina -->
 {% block conteudo %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="alerta" class="alert alert-success alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        {% endwith %}
     <header>
         <div class="header">
             <h1>Editar Nota</h1>
         </div>
     </header>
     <main>
-        <section class="criar-nota">
-            <form action="" method="">
-                <input class="titulo" type="text" placeholder="Digite o Titulo " required>
-                <textarea class="conteudo" name="conteudo" id="conteudo" placeholder="Digite o Conteudo" required></textarea>
+        
+        <section class="editar-nota">
+            <form action="/update" method="POST">
+                <input type="hidden" name="id_nota" value="{{ id_nota }}">
+                <input class="titulo" id="titulo" name="titulo" type="text" placeholder="Digite o Titulo " >
+                <textarea class="conteudo" name="conteudo" id="conteudo" placeholder="Digite o Conteudo" ></textarea>
                 <div class="botoes">
                     <input class="Salvar" type="submit" value="Salvar">
-                    <a  href="/visualizar"> <p class="Voltar">Voltar</p></a>
+                    <a  href="/visualizar/{{ id_nota }}">
+                    <p class="Voltar">Voltar</p></a>
                 </div>
             </form>
         </section>
