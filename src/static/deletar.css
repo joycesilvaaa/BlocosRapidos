@@ -29,6 +29,7 @@
     padding: 2%;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 2%;
     border-radius: 10px;
     background-color: rgba(217, 217, 217, 0.20);
 
@@ -46,4 +47,14 @@
     font-size: 115%;
     font-weight: 500;
     color: white;
+}
+@media(min-width:900px){
+    
+    .Voltar{
+
+        padding: 1%;
+        margin-left: 45%;
+        margin-right: 45%;
+        font-size: 110%;
+    }
 }

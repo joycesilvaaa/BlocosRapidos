@@ -9,21 +9,20 @@
 {% endblock %}
 <!-- Conteudo da Pagina -->
 {% block conteudo %}
-{% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div id="alerta" class="alert alert-success alert-dismissible fade show" role="alert">
-            {% for message in messages %}
-                &#10004; {{ message }}
-            {% endfor %}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="minha-classe-de-flash">
+                {{ message }}
             </div>
-        {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
 <header class="header">
         <h1>Remover Nota</h1>   
 </header>
 <main>
-    
-        {% endwith %}
+
     <section class="notas">
         {% for nota in notas_deletar: %}
         <div class="nota-remover">
