@@ -9,6 +9,16 @@
 {% endblock %}
 <!-- Conteudo da Pagina -->
 {% block conteudo %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div id="alerta" class="alert alert-success alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endif %}
+        {% endwith %}
     <header>
         <div class="header">
             <h1>Criar Nota</h1>
@@ -16,12 +26,12 @@
     </header>
     <main>
         <section class="criar-nota">
-            <form action="" method="">
-                <input class="titulo" type="text" placeholder="Digite o Titulo " required>
-                <textarea class="conteudo" name="conteudo" id="conteudo" placeholder="Digite o Conteudo" required></textarea>
+            <form action="/create" method="POST">
+                <input class="titulo" name="titulo" id="titulo" type="text" placeholder="Digite o Titulo " required  >
+                <textarea class="conteudo" name="conteudo" id="conteudo" placeholder="Digite o Conteudo" required ></textarea>
                 <div class="botoes">
                     <input class="criar" type="submit" value="Criar">
-                    <a  href="/"> <p class="Voltar">Voltar</p></a>
+                    <a  href="/"><p class="Voltar">Voltar</p></a>
                 </div>
             </form>
         </section>
