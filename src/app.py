@@ -3,9 +3,9 @@ import mysql.connector
 from config import db_config
 
 app = Flask(__name__)
+
 app.secret_key = 'blocosrapidos'
 
-# Initialize the database connection
 db_connection = mysql.connector.connect(**db_config)
 
 def cria_tabelas_db():
